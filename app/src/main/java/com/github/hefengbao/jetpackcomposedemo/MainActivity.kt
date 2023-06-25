@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackcomposedemoTheme {
-
+                FeatureList()
             }
         }
     }
@@ -37,10 +37,7 @@ fun FeatureList(
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    JetpackcomposedemoTheme {
-        
-    }
+private fun Item() {
+    
 }

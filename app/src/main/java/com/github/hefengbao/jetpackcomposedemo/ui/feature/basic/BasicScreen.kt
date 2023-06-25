@@ -21,8 +21,10 @@ import androidx.compose.ui.unit.dp
 fun BasicScreen(
     modifier: Modifier = Modifier
 ) {
-    Column {
+    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
         BoxSample(modifier = modifier)
+        ColumSample(modifier = modifier)
+        RowSample(modifier = modifier)
     }
 }
 
@@ -121,8 +123,14 @@ fun RowSample(
             .width(30.dp)
             .height(30.dp)
             .background(Color.Red))
-        Box(modifier = modifier.height(50.dp).weight(2f).background(Color.Blue))
-        Box(modifier = modifier.height(50.dp).weight(1f).background(Color.Cyan))
+        Box(modifier = modifier
+            .height(50.dp)
+            .weight(2f)
+            .background(Color.Blue))
+        Box(modifier = modifier
+            .height(50.dp)
+            .weight(1f)
+            .background(Color.Cyan))
     }
 }
 
