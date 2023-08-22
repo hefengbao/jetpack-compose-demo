@@ -14,6 +14,7 @@ import com.github.hefengbao.jetpackcomposedemo.ui.feature.grid.GridScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.icon.IconScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.image.ImageScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.list.ListScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.navigationbar.NavigationBarScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.radiobutton_checkbox_switch.RadioButtonCheckBoxSwitchScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.scaffold.ScaffoldScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.text.TextScreen
@@ -33,6 +34,7 @@ private const val ROUTE_LIST = "list"
 private const val ROUTE_GRID = "grid"
 private const val ROUTE_CARD = "card"
 private const val ROUTE_ALERTDIALOG = "alertdialog"
+private const val ROUTE_NAVIGATIONBAR = "navigationbar"
 
 @Composable
 fun AppNavHost(
@@ -57,6 +59,7 @@ fun AppNavHost(
                 onGridClick = { navController.navigate(ROUTE_GRID)},
                 onCardClick = { navController.navigate(ROUTE_CARD)},
                 onAlertDialogClick = { navController.navigate(ROUTE_ALERTDIALOG)},
+                onNavigationBarClick = { navController.navigate(ROUTE_NAVIGATIONBAR)},
             )
         }
 
@@ -112,6 +115,10 @@ fun AppNavHost(
 
         composable(ROUTE_ALERTDIALOG){
             AlertDialogScreen()
+        }
+
+        composable(ROUTE_NAVIGATIONBAR){
+            NavigationBarScreen()
         }
     }
 }

@@ -30,6 +30,7 @@ fun HomeScreen(
     onGridClick: () -> Unit,
     onCardClick: () -> Unit,
     onAlertDialogClick: () -> Unit,
+    onNavigationBarClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -45,6 +46,7 @@ fun HomeScreen(
         onGridClick = onGridClick,
         onCardClick = onCardClick,
         onAlertDialogClick= onAlertDialogClick,
+        onNavigationBarClick= onNavigationBarClick,
     )
 }
 
@@ -65,6 +67,7 @@ private fun FeatureList(
     onGridClick: () -> Unit,
     onCardClick: () -> Unit,
     onAlertDialogClick: () -> Unit,
+    onNavigationBarClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -86,6 +89,7 @@ private fun FeatureList(
         Item(title = "LazyVerticalGrid & LazyHorizontalGrid", onClick = onGridClick)
         Item(title = "Card", onClick = onCardClick)
         Item(title = "AlertDialog", onClick = onAlertDialogClick)
+        Item(title = "NavigationBar", onClick = onNavigationBarClick)
     }
 }
 
