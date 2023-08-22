@@ -8,8 +8,10 @@ import com.github.hefengbao.jetpackcomposedemo.ui.feature.HomeScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.appbar.AppBarScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.basic.BasicScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.button.ButtonScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.grid.GridScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.icon.IconScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.image.ImageScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.list.ListScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.radiobutton_checkbox_switch.RadioButtonCheckBoxSwitchScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.scaffold.ScaffoldScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.text.TextScreen
@@ -25,6 +27,8 @@ private const val ROUTE_BUTTON= "button"
 private const val ROUTE_SELECTION= "selection"
 private const val ROUTE_APPBAR= "appbar"
 private const val ROUTE_SCAFFOLD= "scaffold"
+private const val ROUTE_LIST = "list"
+private const val ROUTE_GRID = "grid"
 
 @Composable
 fun AppNavHost(
@@ -44,7 +48,9 @@ fun AppNavHost(
                 onButtonClick = { navController.navigate(ROUTE_BUTTON) },
                 onSelectionClick = { navController.navigate(ROUTE_SELECTION) },
                 onAppBarClick = { navController.navigate(ROUTE_APPBAR) },
-                onScaffoldClick = { navController.navigate(ROUTE_SCAFFOLD)}
+                onScaffoldClick = { navController.navigate(ROUTE_SCAFFOLD)},
+                onListClick = { navController.navigate(ROUTE_LIST)},
+                onGridClick = { navController.navigate(ROUTE_GRID)}
             )
         }
 
@@ -84,6 +90,14 @@ fun AppNavHost(
             ScaffoldScreen(
                 onBackClick = navController::navigateUp
             )
+        }
+
+        composable(ROUTE_LIST){
+            ListScreen()
+        }
+
+        composable(ROUTE_GRID){
+            GridScreen()
         }
     }
 }

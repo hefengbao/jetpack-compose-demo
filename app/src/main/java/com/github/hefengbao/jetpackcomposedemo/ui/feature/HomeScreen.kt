@@ -1,6 +1,5 @@
 package com.github.hefengbao.jetpackcomposedemo.ui.feature
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
@@ -11,10 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -28,6 +25,8 @@ fun HomeScreen(
     onSelectionClick: () -> Unit,
     onAppBarClick: () -> Unit,
     onScaffoldClick: () -> Unit,
+    onListClick: () -> Unit,
+    onGridClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -38,7 +37,9 @@ fun HomeScreen(
         onButtonClick = onButtonClick,
         onSelectionClick = onSelectionClick,
         onAppBarClick = onAppBarClick,
-        onScaffoldClick = onScaffoldClick
+        onScaffoldClick = onScaffoldClick,
+        onListClick = onListClick,
+        onGridClick = onGridClick,
     )
 }
 
@@ -55,6 +56,8 @@ private fun FeatureList(
     onSelectionClick: () -> Unit,
     onAppBarClick: () -> Unit,
     onScaffoldClick: () -> Unit,
+    onListClick: () -> Unit,
+    onGridClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -72,6 +75,8 @@ private fun FeatureList(
         Item(title = "RadioButton、Checkbox、Switch", onClick = onSelectionClick)
         Item(title = "TopAppBar & BottomAppBar", onClick = onAppBarClick)
         Item(title = "Scaffold & SnackBar", onClick = onScaffoldClick)
+        Item(title = "LazyColumn & LazyRow", onClick = onListClick)
+        Item(title = "LazyVerticalGrid & LazyHorizontalGrid", onClick = onGridClick)
     }
 }
 
