@@ -33,7 +33,8 @@ import androidx.compose.ui.tooling.preview.Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScaffoldScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onBackClick: () -> Unit
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     var showSnackbar by remember { mutableStateOf(false) }
@@ -45,7 +46,7 @@ fun ScaffoldScreen(
                     Text(text = "ww.8ug.icu")
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = onBackClick) {
                         Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
                     }
                 },
@@ -107,5 +108,7 @@ fun ScaffoldScreen(
 @Preview
 @Composable
 private fun ScaffoldScreenPreview() {
-    ScaffoldScreen()
+    ScaffoldScreen(
+        onBackClick = {}
+    )
 }
