@@ -8,6 +8,7 @@ import com.github.hefengbao.jetpackcomposedemo.ui.feature.HomeScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.appbar.AppBarScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.basic.BasicScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.button.ButtonScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.card.CardScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.grid.GridScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.icon.IconScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.image.ImageScreen
@@ -29,6 +30,7 @@ private const val ROUTE_APPBAR= "appbar"
 private const val ROUTE_SCAFFOLD= "scaffold"
 private const val ROUTE_LIST = "list"
 private const val ROUTE_GRID = "grid"
+private const val ROUTE_CARD = "card"
 
 @Composable
 fun AppNavHost(
@@ -50,7 +52,8 @@ fun AppNavHost(
                 onAppBarClick = { navController.navigate(ROUTE_APPBAR) },
                 onScaffoldClick = { navController.navigate(ROUTE_SCAFFOLD)},
                 onListClick = { navController.navigate(ROUTE_LIST)},
-                onGridClick = { navController.navigate(ROUTE_GRID)}
+                onGridClick = { navController.navigate(ROUTE_GRID)},
+                onCardClick = { navController.navigate(ROUTE_CARD)},
             )
         }
 
@@ -98,6 +101,10 @@ fun AppNavHost(
 
         composable(ROUTE_GRID){
             GridScreen()
+        }
+
+        composable(ROUTE_CARD){
+            CardScreen()
         }
     }
 }

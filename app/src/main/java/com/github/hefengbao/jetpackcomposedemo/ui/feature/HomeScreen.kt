@@ -27,6 +27,7 @@ fun HomeScreen(
     onScaffoldClick: () -> Unit,
     onListClick: () -> Unit,
     onGridClick: () -> Unit,
+    onCardClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -40,6 +41,7 @@ fun HomeScreen(
         onScaffoldClick = onScaffoldClick,
         onListClick = onListClick,
         onGridClick = onGridClick,
+        onCardClick = onCardClick,
     )
 }
 
@@ -58,6 +60,7 @@ private fun FeatureList(
     onScaffoldClick: () -> Unit,
     onListClick: () -> Unit,
     onGridClick: () -> Unit,
+    onCardClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -77,6 +80,7 @@ private fun FeatureList(
         Item(title = "Scaffold & SnackBar", onClick = onScaffoldClick)
         Item(title = "LazyColumn & LazyRow", onClick = onListClick)
         Item(title = "LazyVerticalGrid & LazyHorizontalGrid", onClick = onGridClick)
+        Item(title = "Card", onClick = onCardClick)
     }
 }
 
