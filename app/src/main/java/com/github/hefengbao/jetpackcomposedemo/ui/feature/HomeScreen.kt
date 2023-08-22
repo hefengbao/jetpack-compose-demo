@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,6 +29,7 @@ fun HomeScreen(
     onListClick: () -> Unit,
     onGridClick: () -> Unit,
     onCardClick: () -> Unit,
+    onAlertDialogClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -42,6 +44,7 @@ fun HomeScreen(
         onListClick = onListClick,
         onGridClick = onGridClick,
         onCardClick = onCardClick,
+        onAlertDialogClick= onAlertDialogClick,
     )
 }
 
@@ -61,12 +64,13 @@ private fun FeatureList(
     onListClick: () -> Unit,
     onGridClick: () -> Unit,
     onCardClick: () -> Unit,
+    onAlertDialogClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .scrollable(rememberScrollState(), Orientation.Vertical)
-            .padding(16.dp),
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Item(title = "Modifier、Box、Colum、Row", onClick = onBasicClick)
@@ -81,6 +85,7 @@ private fun FeatureList(
         Item(title = "LazyColumn & LazyRow", onClick = onListClick)
         Item(title = "LazyVerticalGrid & LazyHorizontalGrid", onClick = onGridClick)
         Item(title = "Card", onClick = onCardClick)
+        Item(title = "AlertDialog", onClick = onAlertDialogClick)
     }
 }
 

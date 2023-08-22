@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.HomeScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.alertdialog.AlertDialogScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.appbar.AppBarScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.basic.BasicScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.button.ButtonScreen
@@ -31,6 +32,7 @@ private const val ROUTE_SCAFFOLD= "scaffold"
 private const val ROUTE_LIST = "list"
 private const val ROUTE_GRID = "grid"
 private const val ROUTE_CARD = "card"
+private const val ROUTE_ALERTDIALOG = "alertdialog"
 
 @Composable
 fun AppNavHost(
@@ -54,6 +56,7 @@ fun AppNavHost(
                 onListClick = { navController.navigate(ROUTE_LIST)},
                 onGridClick = { navController.navigate(ROUTE_GRID)},
                 onCardClick = { navController.navigate(ROUTE_CARD)},
+                onAlertDialogClick = { navController.navigate(ROUTE_ALERTDIALOG)},
             )
         }
 
@@ -105,6 +108,10 @@ fun AppNavHost(
 
         composable(ROUTE_CARD){
             CardScreen()
+        }
+
+        composable(ROUTE_ALERTDIALOG){
+            AlertDialogScreen()
         }
     }
 }
