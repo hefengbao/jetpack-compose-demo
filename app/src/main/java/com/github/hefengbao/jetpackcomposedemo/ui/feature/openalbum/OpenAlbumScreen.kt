@@ -37,7 +37,7 @@ fun OpenAlbumScreen(
     ) {
         Button(
             onClick = {
-                singleLauncher.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.SingleMimeType()))
+                singleLauncher.launch(PickVisualMediaRequest())
             }
         ) {
             Text(text = "打开相册（单选）")
