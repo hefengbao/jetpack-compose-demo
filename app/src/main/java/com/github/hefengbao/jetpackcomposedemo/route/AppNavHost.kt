@@ -20,6 +20,7 @@ import com.github.hefengbao.jetpackcomposedemo.ui.feature.scaffold.ScaffoldScree
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.text.TextScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.textfiled.TextFieldScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.openalbum.OpenAlbumScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.permission.PermissionScreen
 
 private const val ROUTE_HOME = "home"
 private const val ROUTE_BASIC = "basic"
@@ -37,6 +38,7 @@ private const val ROUTE_CARD = "card"
 private const val ROUTE_ALERTDIALOG = "alertdialog"
 private const val ROUTE_NAVIGATIONBAR = "navigationbar"
 private const val ROUTE_OPENALBUM = "open_album"
+private const val ROUTE_PERMISSION = "permission"
 
 @Composable
 fun AppNavHost(
@@ -63,6 +65,7 @@ fun AppNavHost(
                 onAlertDialogClick = { navController.navigate(ROUTE_ALERTDIALOG)},
                 onNavigationBarClick = { navController.navigate(ROUTE_NAVIGATIONBAR)},
                 onOpenAlbumClick = { navController.navigate(ROUTE_OPENALBUM)},
+                onPermissionClick = { navController.navigate(ROUTE_PERMISSION)},
             )
         }
 
@@ -126,6 +129,10 @@ fun AppNavHost(
 
         composable(ROUTE_OPENALBUM){
             OpenAlbumScreen()
+        }
+
+        composable(ROUTE_PERMISSION){
+            PermissionScreen()
         }
     }
 }

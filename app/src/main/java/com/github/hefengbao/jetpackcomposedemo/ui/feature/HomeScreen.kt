@@ -30,6 +30,7 @@ fun HomeScreen(
     onAlertDialogClick: () -> Unit,
     onNavigationBarClick: () -> Unit,
     onOpenAlbumClick: () -> Unit,
+    onPermissionClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -47,6 +48,7 @@ fun HomeScreen(
         onAlertDialogClick = onAlertDialogClick,
         onNavigationBarClick = onNavigationBarClick,
         onOpenAlbumClick = onOpenAlbumClick,
+        onPermissionClick = onPermissionClick,
     )
 }
 
@@ -69,6 +71,7 @@ private fun FeatureList(
     onAlertDialogClick: () -> Unit,
     onNavigationBarClick: () -> Unit,
     onOpenAlbumClick: () -> Unit,
+    onPermissionClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -95,6 +98,7 @@ private fun FeatureList(
         Item(title = "AlertDialog", onClick = onAlertDialogClick)
         Item(title = "NavigationBar", onClick = onNavigationBarClick)
         Item(title = "打开相册（Open Album）", onClick = onOpenAlbumClick)
+        Item(title = "权限请求", onClick = onPermissionClick)
     }
 }
 
