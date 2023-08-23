@@ -23,7 +23,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -54,7 +53,7 @@ fun TextScreen(
         Text(
             text = "可以点击的 Text",
             modifier = modifier.clickable {
-                Toast.makeText(context,"点击了",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "点击了", Toast.LENGTH_SHORT).show()
             }
         )
         Text(
@@ -75,13 +74,13 @@ fun ClickableTextSample(
     val text = buildAnnotatedString {
         append("请阅读并同意")
         pushStringAnnotation(tag = tag, annotation = "https://www.baidu.com")
-        withStyle(style = SpanStyle(color = Color.Blue)){
+        withStyle(style = SpanStyle(color = Color.Blue)) {
             append("《服务条款》")
         }
         pop()
         append("和")
-        pushStringAnnotation(tag,"https://www.bing.com")
-        withStyle(style = SpanStyle(color = Color.Blue)){
+        pushStringAnnotation(tag, "https://www.bing.com")
+        withStyle(style = SpanStyle(color = Color.Blue)) {
             append("《隐私条款》")
         }
         pop()
@@ -89,7 +88,7 @@ fun ClickableTextSample(
 
     val uriHandler = LocalUriHandler.current
 
-    ClickableText(text = text, onClick = {index ->
+    ClickableText(text = text, onClick = { index ->
         text.getStringAnnotations(tag, index, index).map {
             uriHandler.openUri(it.item)
         }

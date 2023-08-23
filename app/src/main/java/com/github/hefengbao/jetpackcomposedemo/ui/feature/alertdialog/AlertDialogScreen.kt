@@ -28,7 +28,7 @@ fun AlertDialogScreen(
         Text(text = "显示对话框")
     }
 
-    if (showDialog){
+    if (showDialog) {
         AlertDialog(
             modifier = modifier,
             onDismissRequest = { showDialog = false },
@@ -58,7 +58,7 @@ fun AlertDialogScreen(
                         4、生效时间
                     """.trimIndent()
                     )
-                    
+
                     Row(
                         verticalAlignment = Alignment.CenterVertically
                     ) {

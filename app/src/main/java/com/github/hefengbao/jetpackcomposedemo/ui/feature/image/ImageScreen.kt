@@ -2,30 +2,22 @@ package com.github.hefengbao.jetpackcomposedemo.ui.feature.image
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.TransformableState
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.CircularProgressIndicator
-
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -52,7 +44,10 @@ fun ImageScreen(
             colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.primary)
         )
 
-        Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = "painterResource")
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_background),
+            contentDescription = "painterResource"
+        )
 
         AsyncImage(
             model = "https://pic.616pic.com/ys_bnew_img/00/28/60/6p82GlZ565.jpg",
@@ -76,16 +71,19 @@ fun ImageScreen(
                 .size(100.dp)
                 .clip(CircleShape),
             onState = { state ->
-                when(state){
+                when (state) {
                     AsyncImagePainter.State.Empty -> {
                         // 如果图片链接不存在，这里可以设置提示
                     }
+
                     is AsyncImagePainter.State.Error -> {
                         // 如果加载出错，这里可先设置显示错误提示或图片
                     }
+
                     is AsyncImagePainter.State.Loading -> {
                         // 比如显示加载进度条等
                     }
+
                     is AsyncImagePainter.State.Success -> {
                         // 比如隐藏加载进度条等
                     }

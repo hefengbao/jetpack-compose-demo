@@ -10,9 +10,9 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,17 +27,17 @@ fun RadioButtonCheckBoxSwitchScreen(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        val radioList = listOf<String>("苹果","芒果","结果")
+        val radioList = listOf<String>("苹果", "芒果", "结果")
         var radioSelected: Int? by remember { mutableStateOf(null) }
-        val radioSelectedText = if (radioSelected != null){
+        val radioSelectedText = if (radioSelected != null) {
             "(${radioList[radioSelected!!]})"
-        }else{
+        } else {
             "()"
         }
 
         Text(text = "那个不是水果？${radioSelectedText}")
 
-        radioList.forEachIndexed { index,item ->
+        radioList.forEachIndexed { index, item ->
             Row(
                 modifier = modifier
                     .fillMaxWidth()
@@ -54,8 +54,8 @@ fun RadioButtonCheckBoxSwitchScreen(
         Row(
             modifier = modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
-        ){
-            Checkbox(checked = checkboxChecked, onCheckedChange = { checkboxChecked = it})
+        ) {
+            Checkbox(checked = checkboxChecked, onCheckedChange = { checkboxChecked = it })
             Text(text = "请阅读并同意《服务协议》")
         }
 

@@ -24,7 +24,7 @@ fun GridScreen(
     val lazyVerticalGridState = rememberLazyGridState()
     val lazyHorizontalState = rememberLazyGridState()
 
-    val list = listOf(1,2,3,4,5,6,7,8,9,10)
+    val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
     Column(
         modifier = modifier.fillMaxWidth()
@@ -38,7 +38,7 @@ fun GridScreen(
             content = {
                 items(
                     items = list,
-                ){item ->  
+                ) { item ->
                     Text(
                         text = "Grid $item",
                         modifier = modifier
@@ -49,7 +49,7 @@ fun GridScreen(
                 }
             }
         )
-        
+
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             state = lazyVerticalGridState,
@@ -58,7 +58,7 @@ fun GridScreen(
             content = {
                 items(
                     items = list,
-                ){item ->
+                ) { item ->
                     Text(
                         text = "Grid $item",
                         modifier = modifier

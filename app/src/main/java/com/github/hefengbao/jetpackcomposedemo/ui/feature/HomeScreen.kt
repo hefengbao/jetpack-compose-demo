@@ -1,7 +1,5 @@
 package com.github.hefengbao.jetpackcomposedemo.ui.feature
 
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,6 +29,7 @@ fun HomeScreen(
     onCardClick: () -> Unit,
     onAlertDialogClick: () -> Unit,
     onNavigationBarClick: () -> Unit,
+    onOpenAlbumClick: () -> Unit,
 ) {
     FeatureList(
         onBasicClick = onBasicClick,
@@ -45,8 +44,9 @@ fun HomeScreen(
         onListClick = onListClick,
         onGridClick = onGridClick,
         onCardClick = onCardClick,
-        onAlertDialogClick= onAlertDialogClick,
-        onNavigationBarClick= onNavigationBarClick,
+        onAlertDialogClick = onAlertDialogClick,
+        onNavigationBarClick = onNavigationBarClick,
+        onOpenAlbumClick = onOpenAlbumClick,
     )
 }
 
@@ -68,6 +68,7 @@ private fun FeatureList(
     onCardClick: () -> Unit,
     onAlertDialogClick: () -> Unit,
     onNavigationBarClick: () -> Unit,
+    onOpenAlbumClick: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -81,7 +82,10 @@ private fun FeatureList(
         Item(title = "TextField & OutlinedTextField", onClick = onTextFieldClick)
         Item(title = "Image", onClick = onImageClick)
         Item(title = "Icon", onClick = onIconClick)
-        Item(title = "Button、OutlinedButton、TextButton、IconButton、FilledTonalButton、ElevatedButton", onClick = onButtonClick)
+        Item(
+            title = "Button、OutlinedButton、TextButton、IconButton、FilledTonalButton、ElevatedButton",
+            onClick = onButtonClick
+        )
         Item(title = "RadioButton、Checkbox、Switch", onClick = onSelectionClick)
         Item(title = "TopAppBar & BottomAppBar", onClick = onAppBarClick)
         Item(title = "Scaffold & SnackBar", onClick = onScaffoldClick)
@@ -90,6 +94,7 @@ private fun FeatureList(
         Item(title = "Card", onClick = onCardClick)
         Item(title = "AlertDialog", onClick = onAlertDialogClick)
         Item(title = "NavigationBar", onClick = onNavigationBarClick)
+        Item(title = "打开相册（Open Album）", onClick = onOpenAlbumClick)
     }
 }
 

@@ -72,7 +72,7 @@ fun ScaffoldScreen(
                 Icon(imageVector = Icons.Default.Send, contentDescription = null)
             }
         },
-        snackbarHost = { SnackbarHost(snackbarHostState)}
+        snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
         Column(
             modifier = modifier.padding(paddingValues)
@@ -82,8 +82,8 @@ fun ScaffoldScreen(
             }
         }
 
-        LaunchedEffect(showSnackbar){
-            if (showSnackbar){
+        LaunchedEffect(showSnackbar) {
+            if (showSnackbar) {
                 val result = snackbarHostState.showSnackbar(
                     message = "欢迎来到 www.8ug.icu",
                     actionLabel = "关闭",
@@ -91,7 +91,7 @@ fun ScaffoldScreen(
                     withDismissAction = true
                 )
 
-                showSnackbar = when(result){
+                showSnackbar = when (result) {
                     SnackbarResult.Dismissed -> {
                         false
                     }

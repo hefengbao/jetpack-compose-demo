@@ -1,9 +1,7 @@
 package com.github.hefengbao.jetpackcomposedemo.ui.feature.navigationbar
 
-import android.graphics.drawable.VectorDrawable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Chat
@@ -54,9 +52,9 @@ fun NavigationBarScreen(
                                         if (navigationItem.count != null) {
                                             Badge {
                                                 Text(
-                                                    text = if (navigationItem.count >= 100){
+                                                    text = if (navigationItem.count >= 100) {
                                                         "99+"
-                                                    }else{
+                                                    } else {
                                                         navigationItem.count.toString()
                                                     }
                                                 )
@@ -66,7 +64,10 @@ fun NavigationBarScreen(
                                         }
                                     }
                                 ) {
-                                    Icon(imageVector = navigationItem.icon, contentDescription = null)
+                                    Icon(
+                                        imageVector = navigationItem.icon,
+                                        contentDescription = null
+                                    )
                                 }
                             }
 
@@ -78,13 +79,13 @@ fun NavigationBarScreen(
                 }
             }
         }
-    ) {paddingValues ->
+    ) { paddingValues ->
         Box(
             modifier = modifier
                 .padding(paddingValues)
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Text(text = list[selectedItem].label)
         }
     }

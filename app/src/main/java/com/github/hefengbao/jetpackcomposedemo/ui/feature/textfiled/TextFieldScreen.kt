@@ -16,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -34,7 +33,7 @@ fun TextFieldScreen(
     ) {
         TextField(
             value = account,
-            onValueChange = { account = it},
+            onValueChange = { account = it },
             label = {
                 Text(text = "账号")
             }
@@ -46,7 +45,7 @@ fun TextFieldScreen(
                 Text(text = "密码")
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            visualTransformation =  PasswordVisualTransformation('*')
+            visualTransformation = PasswordVisualTransformation('*')
         )
         TextField(value = "", onValueChange = {}, enabled = false)
         OutlinedTextField(

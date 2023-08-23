@@ -8,9 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
-import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -29,7 +26,7 @@ fun ListScreen(
     val lazyColumnState = rememberLazyListState()
     val lazyRowState = rememberLazyListState()
 
-    val list = listOf(1,2,3,4,5,6,7,8,9,10)
+    val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     LazyColumn(
         state = lazyColumnState,
         content = {
@@ -40,8 +37,8 @@ fun ListScreen(
                     content = {
                         itemsIndexed(
                             items = list,
-                            key = {index: Int, item: Int -> index },
-                        ){index,item ->
+                            key = { index: Int, item: Int -> index },
+                        ) { index, item ->
                             Text(
                                 text = "Row $item",
                                 modifier = modifier
@@ -58,8 +55,8 @@ fun ListScreen(
 
             itemsIndexed(
                 items = list,
-                key = { index: Int, item: Int ->  index}
-            ){index: Int, item: Int ->  
+                key = { index: Int, item: Int -> index }
+            ) { index: Int, item: Int ->
                 Text(
                     text = "Column itemsIndexed：index = $index,item = $item",
                     modifier = modifier
@@ -69,13 +66,13 @@ fun ListScreen(
                 )
             }
             item {
-                Divider( modifier = modifier.fillMaxWidth())
+                Divider(modifier = modifier.fillMaxWidth())
             }
 
             items(
                 items = list,
                 key = null
-            ){item: Int ->
+            ) { item: Int ->
                 Text(
                     text = "Column items：item = $item",
                     modifier = modifier
@@ -86,7 +83,7 @@ fun ListScreen(
             }
 
             item {
-                Divider( modifier = modifier.fillMaxWidth())
+                Divider(modifier = modifier.fillMaxWidth())
             }
         }
     )

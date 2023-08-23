@@ -19,6 +19,7 @@ import com.github.hefengbao.jetpackcomposedemo.ui.feature.radiobutton_checkbox_s
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.scaffold.ScaffoldScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.text.TextScreen
 import com.github.hefengbao.jetpackcomposedemo.ui.feature.textfiled.TextFieldScreen
+import com.github.hefengbao.jetpackcomposedemo.ui.feature.openalbum.ViewModelScreen
 
 private const val ROUTE_HOME = "home"
 private const val ROUTE_BASIC = "basic"
@@ -35,6 +36,7 @@ private const val ROUTE_GRID = "grid"
 private const val ROUTE_CARD = "card"
 private const val ROUTE_ALERTDIALOG = "alertdialog"
 private const val ROUTE_NAVIGATIONBAR = "navigationbar"
+private const val ROUTE_VIEWMODEL = "viewmodel"
 
 @Composable
 fun AppNavHost(
@@ -60,6 +62,7 @@ fun AppNavHost(
                 onCardClick = { navController.navigate(ROUTE_CARD)},
                 onAlertDialogClick = { navController.navigate(ROUTE_ALERTDIALOG)},
                 onNavigationBarClick = { navController.navigate(ROUTE_NAVIGATIONBAR)},
+                onViewModelClick = { navController.navigate(ROUTE_VIEWMODEL)},
             )
         }
 
@@ -119,6 +122,10 @@ fun AppNavHost(
 
         composable(ROUTE_NAVIGATIONBAR){
             NavigationBarScreen()
+        }
+
+        composable(ROUTE_VIEWMODEL){
+            ViewModelScreen()
         }
     }
 }

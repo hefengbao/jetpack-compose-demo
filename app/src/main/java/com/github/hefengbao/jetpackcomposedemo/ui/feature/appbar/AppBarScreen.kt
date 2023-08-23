@@ -20,7 +20,6 @@ import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -32,12 +31,12 @@ import androidx.compose.ui.unit.dp
 fun AppBarScreen(
     modifier: Modifier = Modifier
 ) {
-    Column (
+    Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         TopAppBar(
-            title = { 
+            title = {
                 Text(text = "8ug.icu")
             },
             navigationIcon = {
@@ -54,7 +53,7 @@ fun AppBarScreen(
                 }
             }
         )
-        
+
         MediumTopAppBar(
             title = {
                 Text(text = "8ug.icu")

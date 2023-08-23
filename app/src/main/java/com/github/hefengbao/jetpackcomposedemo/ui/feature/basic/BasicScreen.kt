@@ -36,7 +36,7 @@ fun BoxSample(
         modifier = modifier
             .size(250.dp)
             .background(Color.White)
-    ){
+    ) {
         Box(
             modifier = modifier
                 .width(200.dp)
@@ -82,20 +82,26 @@ fun ColumSample(
             .background(Color.White),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Box(modifier = modifier
-            .height(20.dp)
-            .fillMaxWidth()
-            .background(Color.Green))
-        Box(modifier = modifier
-            .padding(start = 8.dp, end = 4.dp, top = 10.dp, bottom = 6.dp)
-            .height(20.dp)
-            .fillMaxWidth()
-            .background(Color.Red))
-        Box(modifier = modifier
-            .padding(horizontal = 16.dp, vertical = 0.dp)
-            .height(20.dp)
-            .fillMaxWidth()
-            .background(Color.Blue))
+        Box(
+            modifier = modifier
+                .height(20.dp)
+                .fillMaxWidth()
+                .background(Color.Green)
+        )
+        Box(
+            modifier = modifier
+                .padding(start = 8.dp, end = 4.dp, top = 10.dp, bottom = 6.dp)
+                .height(20.dp)
+                .fillMaxWidth()
+                .background(Color.Red)
+        )
+        Box(
+            modifier = modifier
+                .padding(horizontal = 16.dp, vertical = 0.dp)
+                .height(20.dp)
+                .fillMaxWidth()
+                .background(Color.Blue)
+        )
     }
 }
 
@@ -115,22 +121,30 @@ fun RowSample(
             .background(Color.Black),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Box(modifier = modifier
-            .width(20.dp)
-            .height(40.dp)
-            .background(Color.Green))
-        Box(modifier = modifier
-            .width(30.dp)
-            .height(30.dp)
-            .background(Color.Red))
-        Box(modifier = modifier
-            .height(50.dp)
-            .weight(2f)
-            .background(Color.Blue))
-        Box(modifier = modifier
-            .height(50.dp)
-            .weight(1f)
-            .background(Color.Cyan))
+        Box(
+            modifier = modifier
+                .width(20.dp)
+                .height(40.dp)
+                .background(Color.Green)
+        )
+        Box(
+            modifier = modifier
+                .width(30.dp)
+                .height(30.dp)
+                .background(Color.Red)
+        )
+        Box(
+            modifier = modifier
+                .height(50.dp)
+                .weight(2f)
+                .background(Color.Blue)
+        )
+        Box(
+            modifier = modifier
+                .height(50.dp)
+                .weight(1f)
+                .background(Color.Cyan)
+        )
     }
 }
 
